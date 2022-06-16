@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="flames.css" rel="stylesheet">
+    <title>Flames</title>
+</head>
+<body>
+    <div class="div">
+    <label>Enter First Name : </label>&nbsp;&nbsp;
+    <input class="box" id="input1" type="text"><br><br>
+    <label style="margin-top: 50px;">Enter Second Name : </label>
+    <input class="box" id="input2" type="text"><br>
+    <button id="butt" onclick="output()">SUBMIT</button>
+    <h1 id="output" class="out"></h1>
+    </div>
+</body>
+<script>
+function output()
+{   
+    var x=document.getElementById('input1').value;
+    var z=document.getElementById('input2').value;
+    var y=document.getElementById('output')
+    var s1=x.split("")
+    var s2=z.split("")
+    var flames="FLAMES".split("")
+    var n1=s1.length;
+    var n2=s2.length;
+    var total = n1+n2;
+    let count=0;
+    for(let i=0;i<n1;i++)
+    {
+        for(let j=0;j<n2;j++)
+        {
+            if(s1[i]==s2[j])
+            {
+              count+=2;
+              s2[j]='0';
+              break;
+            }
+        }
+    }
+    let tot=total-count;
+    let point=0;
+    for(let i=0;i<5;i++)
+        {
+            for(let j=0;j<tot;j++)
+            {
+                if(point > 5)
+                {
+                    point = 0;
+                    j--;
+                }
+                else
+                {
+                    if(flames[point] == "0")
+                        j--;
+                    if(j<tot-1)
+                        point+=1;
+                }
+            }
+            flames[point] = "0";
+        }
+        for(let i=0;i<6;i++)
+        {
+            if(flames[i] != "0")
+            {
+                if(flames[i]=="F")
+                {
+                    y.innerHTML=("Friend");
+                }
+                else if(flames[i]=="L")
+                {
+                    y.innerHTML=("Love");
+                }
+                else if(flames[i]=="A")
+                {
+                    y.innerHTML=("Affection");
+                }
+                else if(flames[i]=="M")
+                {
+                    y.innerHTML=("Marraige");
+                }
+                else if(flames[i]=="E")
+                {
+                    y.innerHTML=("Enemy");
+                }
+                else if(flames[i]=="S")
+                {
+                    y.innerHTML=("Sister");
+                }
+                break;
+            }
+        }
+}
+</script>
+
+</html>

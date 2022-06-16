@@ -1,0 +1,35 @@
+body{
+    background-image: url(adminback.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: larger;
+    font-family: cursive;
+}
+.div{
+    margin-left: 40%;
+    margin-top: 20%;
+    font-weight: bolder;
+}
+.out{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-left: 80px;
+}
+#butt{
+    margin-left: 100px;
+    margin-top: 30px;
+    width: 80px;
+    padding: 8px;
+    color: aliceblue;
+    border-radius: 12px;
+    background-color: rgb(8, 10, 8);
+}
+#butt:hover{
+    color: rgb(5, 4, 4);
+    background-color: rgb(248, 247, 250);
+}
+.box{
+    border-radius: 8%;
+
+}
